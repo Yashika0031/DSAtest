@@ -11,25 +11,25 @@ package treenode;
 import java.util.*;
 
 public class TreeBuilder {
-    public static TreeNode buildTree(Integer[] values) {
+    public static Treenode buildTree(Integer[] values) {
         if (values.length == 0 || values[0] == null) return null;
 
-        TreeNode root = new TreeNode(values[0]);
-        Queue<TreeNode> queue = new LinkedList<>();
+        Treenode root = new Treenode(values[0]);
+        Queue<Treenode> queue = new LinkedList<>();
         queue.offer(root);
         int i = 1;
 
         while (i < values.length) {
-            TreeNode current = queue.poll();
+            Treenode current = queue.poll();
 
             if (i < values.length && values[i] != null) {
-                current.left = new TreeNode(values[i]);
+                current.left = new Treenode(values[i]);
                 queue.offer(current.left);
             }
             i++;
 
             if (i < values.length && values[i] != null) {
-                current.right = new TreeNode(values[i]);
+                current.right = new Treenode(values[i]);
                 queue.offer(current.right);
             }
             i++;
