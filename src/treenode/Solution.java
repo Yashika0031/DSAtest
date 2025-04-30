@@ -11,13 +11,13 @@ package treenode;
 import java.util.*;
 
 public class Solution {
-    public List<Integer> inorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(Treenode root) {
         List<Integer> result = new ArrayList<>();
         inorder(root, result);
         return result;
     }
 
-    private void inorder(TreeNode node, List<Integer> result) {
+    private void inorder(Treenode node, List<Integer> result) {
         if (node == null) return;
         inorder(node.left, result);
         result.add(node.val);
